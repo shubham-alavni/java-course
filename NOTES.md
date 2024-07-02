@@ -28,3 +28,20 @@
 ### javac needed to compile java file. That creates class file. Then why we need java command to run the class file?
 ### explain JVM architecture in detail
 ### Features of Java explain in detail with examples
+### explain coercion in Java
+### difference between print, println, printf, format in Java
+- `print` - prints the string inside the parentheses and the cursor remains on the same line. example: `System.out.print("Hello World");`
+- `println` - prints the string inside the parentheses and moves the cursor to the next line. example: `System.out.println("Hello World");`
+- `printf` - prints the string inside the parentheses and allows you to format the output using format specifiers. example: `System.out.printf("Hello %s", "World");`
+- `format` - same as `printf` but it is a method of the `PrintStream` class. example: `System.out.format("Hello %s", "World");`
+### String object creation in Java and types of string constructors
+### Same literal string assigned to two different reference variables. How many objects are created?
+- Only one object is created in the heap memory and both reference variables point to the same object.
+- But if you create a new string object using the `new` keyword, then a new object is created in the heap memory.
+- Example:
+        ```java
+          String s1 = "Hello";
+          String s2 = "Hello";
+          String s3 = new String("Hello");
+        ```
+### 
