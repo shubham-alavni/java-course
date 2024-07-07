@@ -86,3 +86,15 @@
 ### what is Dynamic Method Dispatch in Java? Explain in detail
 ### what is super keyword in Java? Explain in detail
 ### what is this keyword in Java? Explain in detail
+### what is the difference between this() and super() in Java?
+### what is abstract class in Java? Explain in detail
+### why abstract classes is used in Java? explain with example and actual Use case
+### Abstarct classes vs Concrete classes in Java
+### what is abstract method in Java? Explain in detail, what is the use case?
+### why we can't create an object of an abstract class in Java?
+- An abstract class cannot be instantiated because it may contain abstract methods that are not implemented.
+- To create an object of a class, all the methods must be implemented.
+- Abstract classes are meant to be extended by concrete classes that provide implementations for the abstract methods.
+- You can create an object of a concrete class that extends the abstract class.
+- Use case: Gives flexibility to the child classes to provide their own implementation for the abstract methods.
+- Analogy: An abstract class is like a blueprint for a house. You cannot live in a blueprint, but you can use it to build a house.
