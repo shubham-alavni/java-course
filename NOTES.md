@@ -98,3 +98,28 @@
 - You can create an object of a concrete class that extends the abstract class.
 - Use case: Gives flexibility to the child classes to provide their own implementation for the abstract methods.
 - Analogy: An abstract class is like a blueprint for a house. You cannot live in a blueprint, but you can use it to build a house.
+### what is interface in Java? Explain in detail
+### why interface is used in Java? Explain in detail
+### what is the difference between abstract class and interface in Java?
+### multiple inheritance in Java using interface
+### what is callback method in Java? Explain in detail
+### is it mandatory to implement all methods of an interface in concrete class?
+### Do's and Don'ts of Interface in Java
+- Do's:
+  - Variables in an interface are default `public`, `static`, and `final`.
+  - Methods in an interface are default `public` and `abstract`.
+  - Static methods and default methods can have a body in an interface.
+  - Interfaces can extend other interfaces.
+### what is default method in Java? Explain in detail
+### what are allowed and not allowed things in interfaces in Java?
+- Allowed:
+  - Variables in an interface are default `public`, `static`, and `final`.
+  - Methods in an interface are default `public` and `abstract`.
+  - Static methods and default methods can have a body in an interface.
+  - Interfaces can extend other interfaces.
+- Not Allowed:
+  - Variables in an interface cannot be `private` or `protected`.
+  - Methods in an interface cannot be `private` or `protected`.
+  - Interfaces cannot have constructors.
+  - Interfaces cannot have instance fields.
+  - Interfaces cannot have static initializers.
