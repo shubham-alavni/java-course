@@ -101,6 +101,12 @@
 ### what is interface in Java? Explain in detail
 ### why interface is used in Java? Explain in detail
 ### what is the difference between abstract class and interface in Java?
+- An abstract class can have both abstract and non-abstract methods, while an interface can only have abstract methods.
+- A class can extend only one abstract class, but it can implement multiple interfaces.
+- An abstract class can have instance variables, constructors, and static methods, while an interface cannot.
+- An abstract class can have protected and default access modifiers, while an interface can only have public access modifiers.
+- Use case: Use an abstract class when you want to provide a common implementation for multiple classes. Use an interface when you want to define a contract that multiple classes can implement.
+- Example: An abstract class `Shape` with a method `draw()` and an interface `Drawable` with a method `draw()`.
 ### multiple inheritance in Java using interface
 ### what is callback method in Java? Explain in detail
 ### is it mandatory to implement all methods of an interface in concrete class?
@@ -123,3 +129,31 @@
   - Interfaces cannot have constructors.
   - Interfaces cannot have instance fields.
   - Interfaces cannot have static initializers.
+### what is use of inner classes in Java? Explain in detail
+- Inner classes are used to logically group classes that are only used in one place.
+- Inner classes can access the members of the outer class.
+- Inner classes can be private, protected, public, or default.
+- Inner classes can be static or non-static.
+- Inner classes can be local, anonymous, or member classes.
+- Use case: Inner classes are used in event handling, GUI programming, and multithreading.
+- Example: An inner class can be used to define a custom comparator for sorting a list of objects.
+### what is local inner class and anonymous inner class and static inner class in Java? Explain in detail, And actaul use case
+- Local Inner Class: A class defined inside a method is called a local inner class.
+- Anonymous Inner Class: A class defined without a name is called an anonymous inner class.
+- Static Inner Class: A class defined as static inside another class is called a static inner class.
+- Use case: Local inner classes are used to define helper classes that are only used in a specific method. Anonymous inner classes are used to define event listeners and handlers. Static inner classes are used to group related classes together.
+### what is the use of local inner class in Java? Explain in detail
+- Local inner classes are used to define helper classes that are only used in a specific method.
+- Local inner classes can access the variables of the enclosing method.
+- Local inner classes are not accessible outside the method in which they are defined.
+- Use case: Local inner classes are used to define custom comparators for sorting a list of objects.
+### what is the use of anonymous inner class in Java? Explain in detail
+- Anonymous inner classes are used to define event listeners and handlers.
+- Anonymous inner classes do not have a name and are defined inline.
+- Anonymous inner classes can access the variables of the enclosing method.
+### what is the use of static inner class in Java? Explain in detail
+- Static inner classes are used to group related classes together.
+- Static inner classes do not have access to the instance variables of the outer class.
+- Static inner classes can be instantiated without an instance of the outer class.
+- Use case: Static inner classes are used to define utility classes that are closely related to the outer class.
+- Example: A `Math` class with static
