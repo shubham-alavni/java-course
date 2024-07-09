@@ -157,3 +157,53 @@
 - Static inner classes can be instantiated without an instance of the outer class.
 - Use case: Static inner classes are used to define utility classes that are closely related to the outer class.
 - Example: A `Math` class with static
+### Static variables in Java
+- Static variables created inside method area.
+- Static variables are shared among all instances of a class.
+- Static variables are initialized only once when the class is loaded.
+- Static variables can be accessed using the class name or object reference.
+- Static variables are used to store common data that is shared among all instances of a class.
+- Example: A `counter` variable to keep track of the number of instances created.
+- Use case: Static variables are used to store constants, configuration values, and shared resources.
+### Static methods in Java
+- Static methods can be called without creating an object of the class.
+- Static methods cannot access instance variables directly.
+- Static methods are used to perform operations that do not depend on the state of the object.
+- Static methods can have declared in Interface.
+- We cannot override static methods.
+- `this` and `super` keywords cannot be used in static methods.
+- Example: A `Math` class with static
+- Use case: Static methods are used to provide utility functions that do not require an instance of the class.
+### Static block in Java
+- Static blocks are used to initialize static variables.
+- Static blocks are executed when the class is loaded into memory.
+- Static blocks are executed only once when the class is loaded.
+- not commonly used
+- Static blocks are used to perform one-time initialization tasks.
+- Example: Initializing a static variable with a default value.
+- Use case: Static blocks are used to load configuration files, establish database connections, and perform other initialization tasks.
+### Final variables in Java
+- Final variables are constants that cannot be changed once initialized.
+- Final variables must be initialized when declared or in a constructor.
+- Final variables can be initialized using blocks, constructors, or directly.
+- Final variables can be static or instance variables.
+- Final variables are used to define constants that should not be modified.
+- Example: A `PI` constant with a value of `3.14159`.
+- Use case: Final variables are used to define configuration values, default settings, and other constants.
+### Final methods in Java
+- Final methods cannot be overridden by subclasses.
+- Final methods are used to prevent subclasses from changing the behavior of a method.
+- Final methods are declared using the `final` keyword.
+- Final methods are used to provide a fixed implementation that should not be modified.
+- Example: A `calculateArea()` method in a `Shape` class.
+- Use case: Final methods are used to define core functionality that should not be changed by subclasses.
+- Analogy: A final method is like a sealed box that cannot be opened or modified.
+### Final classes in Java
+- Final classes cannot be extended by other classes.
+- Final classes are used to prevent inheritance and subclassing.
+- Final classes are declared using the `final` keyword.
+- Final classes are used to define immutable classes that should not be modified.
+- Example: A `String` class in Java.
+- Use case: Final classes are used to define utility classes, data transfer objects, and other classes that should not be extended.
+- Analogy: A final class is like a closed book that cannot be opened or modified.
+### Singleton class in Java
