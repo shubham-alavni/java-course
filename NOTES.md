@@ -207,3 +207,9 @@
 - Use case: Final classes are used to define utility classes, data transfer objects, and other classes that should not be extended.
 - Analogy: A final class is like a closed book that cannot be opened or modified.
 ### Singleton class in Java
+### which datatype is used to store financial values in Java?
+- `BigDecimal` is used to store financial values in Java.
+- `BigDecimal` is a class in the `java.math` package that provides arbitrary-precision arithmetic.
+- `BigDecimal` is used to avoid rounding errors that can occur when using floating-point numbers to represent financial values.
+- Example: `BigDecimal amount = new BigDecimal("100.50");`
+- Use case: `BigDecimal` is used in banking applications, e-commerce platforms, and other applications that deal with financial transactions.
