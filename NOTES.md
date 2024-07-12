@@ -80,6 +80,14 @@
 - Abstraction allows you to focus on what an object does rather than how it does it.
 - Example: A car is an abstraction of a vehicle. You don't need to know how the engine works to drive a car.
 - Abstraction is achieved in Java using abstract classes and interfaces.
+### Advantages of Encapsulation in Java, only advantages
+- advantages
+  - Encapsulation improves code maintainability and reusability.
+  - Encapsulation protects the internal state of an object from external access.
+  - Encapsulation allows you to change the internal implementation of a class without affecting its external interface.
+  - Encapsulation helps in reducing complexity and increasing modularity.
+  - Encapsulation makes code easier to understand and debug.
+  - Encapsulation promotes data hiding and information hiding.
 ### What is Data Hiding in Java? Explain in detail
 ### What is the use of the Private constructor in Java? Actual use case
 ### what is Method Overriding, why it is used, Explain in detail
@@ -213,3 +221,24 @@
 - `BigDecimal` is used to avoid rounding errors that can occur when using floating-point numbers to represent financial values.
 - Example: `BigDecimal amount = new BigDecimal("100.50");`
 - Use case: `BigDecimal` is used in banking applications, e-commerce platforms, and other applications that deal with financial transactions.
+### Explain the difference between JVM, JRE, and JDK
+- JVM (Java Virtual Machine): It is an abstract machine that provides a runtime environment for Java bytecode to be executed.
+- JRE (Java Runtime Environment): It is a software package that provides the JVM, libraries, and other components required to run Java applications.
+- JDK (Java Development Kit): It is a software development kit that includes the JRE, compiler, debugger, and other tools needed to develop Java applications.
+- JVM is the runtime environment that executes Java bytecode. JRE is the runtime environment that provides the JVM and libraries. JDK is the development kit that includes the JRE and tools for developing Java applications.
+- Use case: JVM is used to run Java applications. JRE is used to provide the runtime environment for Java applications. JDK is used to develop Java applications.
+### Explain access modifiers in Java
+- Access modifiers are keywords that control the visibility and accessibility of classes, methods, and variables in Java.
+- There are four types of access modifiers in Java:
+  - `private`: The member is accessible only within the same class.
+  - `default` (no modifier): The member is accessible only within the same package.
+  - `protected`: The member is accessible within the same package and by subclasses.
+  - `public`: The member is accessible from any class.
+
+| Header 1                       | Private | Protected | Public | Default |
+| ------------------------------ | ------- | --------- | ------ | ------- |
+| Same Class, Subclass           | Yes     | Yes       | Yes    | Yes     |
+| Same Package,Subclass          | No      | Yes       | Yes    | Yes     |
+| Same Package,Non-Subclass      | No      | Yes       | Yes    | Yes     |
+| Different Package,Subclass     | No      | Yes       | Yes    | No      |
+| Different Package,Non-Subclass | No      | No        | Yes    | No      |
