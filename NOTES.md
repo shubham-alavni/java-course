@@ -242,3 +242,23 @@
 | Same Package,Non-Subclass      | No      | Yes       | Yes    | Yes     |
 | Different Package,Subclass     | No      | Yes       | Yes    | No      |
 | Different Package,Non-Subclass | No      | No        | Yes    | No      |
+
+- Use case: Access modifiers are used to control the visibility and accessibility of classes, methods, and variables in Java.
+### Explain the difference between `==` and `equals()` in Java
+- `==` is used to compare the reference of two objects.
+- `equals()` is used to compare the content of two objects.
+- `==` is used to compare primitive data types and object references.
+- `equals()` is used to compare the content of objects.
+- Use case: `==` is used to check if two objects are the same instance. `equals()` is used to check if two objects are equal in content.
+- Example: `String s1 = "Hello"; String s2 = "Hello"; s1 == s2; s1.equals(s2);`
+
+### Explain the difference between `final`, `finally`, and `finalize` in Java
+### What is the difference between Premitive and Non-Premitive data types in Java?
+
+### Why BigDecimal is used for financial calculations in Java? Why not double or float?
+- `BigDecimal` is used for financial calculations in Java because it provides arbitrary-precision arithmetic and avoids rounding errors that can occur when using floating-point numbers like `double` or `float`.
+- `double` and `float` are binary floating-point numbers that have limited precision and can introduce rounding errors when performing calculations with decimal values.
+- `BigDecimal` is a class in the `java.math` package that provides arbitrary-precision arithmetic and allows you to perform accurate calculations with decimal values.
+- Always use `String` to create `BigDecimal` object. Because, if you use double or float, then it will introduce rounding errors.
+- Example: `BigDecimal amount = new BigDecimal("100.50");`
+- Use case: `BigDecimal` is used in banking applications, e-commerce platforms, and other applications that require precise financial calculations.
