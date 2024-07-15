@@ -262,3 +262,63 @@
 - Always use `String` to create `BigDecimal` object. Because, if you use double or float, then it will introduce rounding errors.
 - Example: `BigDecimal amount = new BigDecimal("100.50");`
 - Use case: `BigDecimal` is used in banking applications, e-commerce platforms, and other applications that require precise financial calculations.
+
+### what is the difference between `break` and `continue` in Java?
+- `break` is used to exit a loop or switch statement.
+- `continue` is used to skip the current iteration of a loop and continue with the next iteration.
+
+### What is reference types - How they are stored in memory?
+- Whenever you create an object, it is stored in the heap memory.
+- Whenever you create a reference variable, it is stored in the stack memory. and that stack memory is stored location of the object in the heap memory.
+- Whenever you create a primitive variable, it is stored in the stack memory.
+- In premitive types, the actual value is stored in the memory. But in reference types, the address of the object is stored in the memory.
+- Example: `String s = "Hello";` Here, `s` is a reference variable that stores the address of the `String` object in the heap memory. And if s is assigned to another reference variable, then both reference variables point to the same object in the heap memory.
+- Example: `int x = 10;` Here, `x` is a primitive variable that stores the actual value `10` in the memory. And if x is assigned to another variable, then a copy of the value is created in the memory. So, both variables have their own copy of the value. if `y = x;` then both x and y have the same value `10` but they are stored in different memory locations, If you change the value of x, then y will not be changed.
+- Each method has its own stack memory. When a method is called, a new stack frame is created in the stack memory to store the local variables, parameters, and return address of the method.
+- Objects are stored in the heap memory, an it is globally shared.
+
+### Why string assignment is not needed to use `new` keyword?
+- In Java, strings are special because they are immutable, which means that once a string object is created, it cannot be changed.
+- When you assign a string literal to a string variable, Java automatically creates a string object in the string pool.
+- The string pool is a special area in the heap memory where Java stores string literals to optimize memory usage.
+- Example: `String s = "Hello";` Here, Java creates a string object with the value `"Hello"` in the string pool and assigns its reference to the variable `s`.
+- If you use the `new` keyword to create a string object, a new object is created in the heap memory, and it is not added to the string pool.
+- Example: `String s = new String("Hello");` Here, a new string object is created in the heap memory, and its reference is assigned to the variable `s`.
+- Use case: String literals are used to store constant values like messages, error codes, and configuration values.
+- Example: `String message = "Hello, World!";`
+
+### String is immutable in Java. What is the reason behind it?
+
+### Why `String` concatenation is not recommended in Java?
+- In Java, string concatenation using the `+` operator creates a new string object every time it is used.
+- When you concatenate two strings using the `+` operator, Java creates a new string object in the heap memory to store the concatenated value.
+- This can lead to performance issues and memory overhead when concatenating multiple strings in a loop or a large number of times.
+- To avoid this, you can use the `StringBuilder` or `StringBuffer` classes, which are mutable and more efficient for string concatenation.
+- Example: `String result = "Hello" + "World" + "!";` Here, Java creates three string objects in the heap memory to store the concatenated value.
+- Use case: Use `StringBuilder` or `StringBuffer` for efficient string concatenation in Java.
+
+### What is the difference between `StringBuffer` and `StringBuilder` in Java?
+- `StringBuffer` and `StringBuilder` are classes in the `java.lang` package that are used to create mutable strings in Java.
+- `StringBuffer` is synchronized and thread-safe, while `StringBuilder` is not synchronized and not thread-safe.
+- `StringBuffer` is slower than `StringBuilder` because of the synchronization overhead.
+- `StringBuilder` is faster than `StringBuffer` because it is not synchronized and does not have the synchronization overhead.
+
+### What are Wrapper classes, why Wrapper classes ?
+- Wrapper classes are classes in Java that provide a way to convert primitive data types into objects.
+- Wrapper classes are used to represent primitive data types as objects in Java.
+- Wrapper classes are final and immutable.
+- Wrapper classes are used for creation from other data types, Utility methods, Storage in Collections, and Serialization.
+
+### What is the difference between `new Integer(10)` and `Integer.valueOf(10)` ?
+- `new Integer(10)` creates a new `Integer` object with the value `10` every time it is called.
+- `Integer.valueOf(10)` returns a cached `Integer` object with the value `10` if the value is within the range `-128` to `127`.
+- `Integer.valueOf(10)` is more memory-efficient than `new Integer(10)` because it reuses the cached object for values within the range `-128` to `127`.
+- Use case: Use `Integer.valueOf(10)` for memory-efficient integer boxing in Java.
+- Example: `Integer i1 = new Integer(10); Integer i2 = Integer.valueOf(10); Integer i3 = Integer.valueOf(10);`
+- In the above example, `i1` is a new `Integer` object, `i2 == i3` is `true` because `Integer.valueOf(10)` returns the same cached object.
+
+### What is Autoboxing wrapper classes ?
+- Autoboxing is the process of automatically converting a primitive data type into its corresponding wrapper class object.
+- Autoboxing is done by the Java compiler behind the scenes.
+- Autoboxing is used to simplify the code, Syntactic sugar.
+- Example: `Integer i = 10;` // Autoboxing int to Integer, BTS it is Integer i = Integer.valueOf(10);
