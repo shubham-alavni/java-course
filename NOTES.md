@@ -326,3 +326,19 @@
 
 ### Date and Time related classes in Java
 - `LocalDate`, `LocalTime`, `LocalDateTime` explore this.
+
+### Variable Arguments
+- Variable arguments are used when the number of arguments passed to a method is not known at compile time.
+- Variable arguments are declared using an ellipsis `...` after the data type of the argument.
+- Variable arguments are treated as an array in the method body.
+- Variable arguments must be the last parameter in the method signature.
+- Example: `public void printNumbers(int... numbers) { for (int number : numbers) { System.out.println(number); } }`
+- Use case: Variable arguments are used in methods that accept a variable number of arguments, such as `printf()` in Java.
+
+### what are the disadvantages of arrays ?
+- Arrays have a fixed size, which cannot be changed once the array is created.
+- Arrays do not provide built-in methods for common operations like sorting, searching, and filtering.
+- Arrays do not provide type safety, which can lead to runtime errors if the wrong type of data is stored in the array.
+- Deleting and inserting elements in an array is inefficient because it requires shifting elements to maintain the order.
+- Arrays do not provide dynamic resizing, which can lead to wasted memory if the array size is larger than needed.
+- Arrays do not provide built-in support for multidimensional arrays, which can make working with complex data structures difficult.
