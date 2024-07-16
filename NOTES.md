@@ -342,3 +342,15 @@
 - Deleting and inserting elements in an array is inefficient because it requires shifting elements to maintain the order.
 - Arrays do not provide dynamic resizing, which can lead to wasted memory if the array size is larger than needed.
 - Arrays do not provide built-in support for multidimensional arrays, which can make working with complex data structures difficult.
+
+### Array vs ArrayList in Java
+- Arrays are fixed in size, while ArrayLists can dynamically resize.
+- Arrays is always type safe, while ArrayList is not type safe.
+- Arrays do not provide built-in methods for common operations, while ArrayLists provide methods like `add()`, `remove()`, `get()`, `size()`, etc.
+- Arrays can store primitive data types, while ArrayLists can only store objects.
+- Arrays are more memory-efficient than ArrayLists because they do not require additional memory for the underlying data structure.
+- Arrays are faster than ArrayLists for random access because they use direct indexing.
+- Use case: Use arrays when the size is fixed and known in advance. Use ArrayLists when the size is dynamic and needs to be resized.
+- Example: `int[] numbers = new int[10]; List<Integer> list = new ArrayList<>();`
+- In the above example, `numbers` is an array of integers, and `list` is an ArrayList of integers.
+- `numbers[0] = 10; list.add(10);` // Adding elements to the array and ArrayList.
