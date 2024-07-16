@@ -302,6 +302,7 @@
 - `StringBuffer` is synchronized and thread-safe, while `StringBuilder` is not synchronized and not thread-safe.
 - `StringBuffer` is slower than `StringBuilder` because of the synchronization overhead.
 - `StringBuilder` is faster than `StringBuffer` because it is not synchronized and does not have the synchronization overhead.
+- `StringBuffer` is synchronized, i.e., thread-safe and therefore, it assures that no two threads will be able to access it simultaneously. On the other hand, `StringBuilder` is unsynchronized, i.e., not thread-safe. It means two or more threads can access it simultaneously.
 
 ### What are Wrapper classes, why Wrapper classes ?
 - Wrapper classes are classes in Java that provide a way to convert primitive data types into objects.
@@ -322,3 +323,6 @@
 - Autoboxing is done by the Java compiler behind the scenes.
 - Autoboxing is used to simplify the code, Syntactic sugar.
 - Example: `Integer i = 10;` // Autoboxing int to Integer, BTS it is Integer i = Integer.valueOf(10);
+
+### Date and Time related classes in Java
+- `LocalDate`, `LocalTime`, `LocalDateTime` explore this.
