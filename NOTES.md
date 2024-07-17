@@ -354,3 +354,38 @@
 - Example: `int[] numbers = new int[10]; List<Integer> list = new ArrayList<>();`
 - In the above example, `numbers` is an array of integers, and `list` is an ArrayList of integers.
 - `numbers[0] = 10; list.add(10);` // Adding elements to the array and ArrayList.
+
+### what is Object Composition?
+- Object composition is a design technique in which a class contains an object of another class as a member variable.
+- Object composition is used to create complex objects by combining simpler objects.
+- Object composition is a form of code reuse and modularity.
+- Object composition is used to model has-a relationships between classes.
+- Example: A `Customer` class contains an `Address` object as a member variable.
+- Use case: Object composition is used to create complex data structures, composite objects, and reusable components.
+
+### Scenario `interface Interface1` having two methods `method1()` and `method2()`. `interface Interface2` has extended `Interface1` and added one more method `method3()`. Now we want override `method1()`, dont want to override `method2()` and `method3()`. How to achieve this?
+- You can create an **abstract class** that implements `Interface2` and provides default implementations for `method2()` and `method3()`.
+
+### Scenario `interface Interface1` having two methods `method1()` and `method2()`. And mutiple classes are implementing this interface. Now we want to add one more method `method3()` to `Interface1` without affecting the existing classes. How to achieve this?
+- You can create default methods in the interface to provide a default implementation for the new method.
+- Default methods were introduced in Java 8 to allow interfaces to have concrete methods without affecting the implementing classes.
+- Example: `default void method3() { System.out.println("Default implementation of method3"); }`
+- Use case: Default methods are used to add new methods to existing interfaces without breaking the implementing classes.
+- Also you can **override** the default method in the **implementing class**.
+
+### Scenario `interface Interface1` I want to add one variable `int x = 10;` to this interface. Is it possible?, If yes, how?
+- You can create a constant variable in the interface using the `static` and `final` keywords.
+- Constant variables in interfaces are implicitly `public`, `static`, and `final`.
+- Normal variables are not allowed in interfaces.
+- Example: `public static final int x = 10;`
+
+### Comparison between Abstarct class and Interface in Java
+-  Actually there is no relation between Abstract class and Interface. But syntax really looks similar.
+-  If **two systems systems, or two components, or two classes talking to each other**, and you want to establish a **contract / Communication** between them, then you can use Interface.
+-  Where as **high level design**, where you want to provide some common functionality to the child classes / sub classes, then you can use Abstract class. All level of subclasses meet that structure. Then you can use Abstract class.
+-  In Interface, you **cannot** call something as **private**. Everything is public.
+-  In Abstract class, you can have **private** methods.
+-  In Interface, variables are **public static final** by default **constants**.
+-  In Abstract class, you can have all types of variables.
+-  Class can **implement multiple** interfaces.
+-  Class can **extend only one** Abstract class.
