@@ -19,9 +19,10 @@ public class MultiplicationTable {
   public static void main(String args[]) {
     // get the number as input from the user
     System.out.println("Enter the number for print multiplication table: ");
-    Scanner number = new Scanner(System.in);
-    int num = number.nextInt();
-    MultiplicationTable multiplicationTable = new MultiplicationTable(num);
-    multiplicationTable.printMultiplicationTable();
+    try (Scanner number = new Scanner(System.in)) {
+      int num = number.nextInt();
+      MultiplicationTable multiplicationTable = new MultiplicationTable(num);
+      multiplicationTable.printMultiplicationTable();
+    }
   }
 }

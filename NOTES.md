@@ -255,11 +255,12 @@
 ### Explain the difference between `final`, `finally`, and `finalize` in Java
 ### What is the difference between Premitive and Non-Premitive data types in Java?
 
-### Why BigDecimal is used for financial calculations in Java? Why not double or float?
-- `BigDecimal` is used for financial calculations in Java because it provides arbitrary-precision arithmetic and avoids rounding errors that can occur when using floating-point numbers like `double` or `float`.
-- `double` and `float` are binary floating-point numbers that have limited precision and can introduce rounding errors when performing calculations with decimal values.
-- `BigDecimal` is a class in the `java.math` package that provides arbitrary-precision arithmetic and allows you to perform accurate calculations with decimal values.
-- Always use `String` to create `BigDecimal` object. Because, if you use double or float, then it will introduce rounding errors.
+### Why BigDecimal##### List, ArrayList - Type safety
+- ~~List is not type safe. You can add any type of elements to the list.~~
+- ~~ArrayList is not type safe. You can add any type of elements to the list.~~
+- **If you want to make the list type safe, then you can use `List<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.**
+- **If you want to make the list type safe, then you can use `ArrayList<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.**
+- **In a List you cannot add primitive data types. You need to use Wrapper classes. It manages the autoboxing and unboxing.**ng and unboxing.**ring` to create `BigDecimal` object. Because, if you use double or float, then it will introduce rounding errors.
 - Example: `BigDecimal amount = new BigDecimal("100.50");`
 - Use case: `BigDecimal` is used in banking applications, e-commerce platforms, and other applications that require precise financial calculations.
 
@@ -389,3 +390,51 @@
 -  In Abstract class, you can have all types of variables.
 -  Class can **implement multiple** interfaces.
 -  Class can **extend only one** Abstract class.
+
+### List collection in Java - List Interface
+- Cares about the **order** of the elements.
+- Allows **duplicates**.
+- Add elements at specific **index**.
+- If specific **index** is not provided, then it will add at the end.
+- Example - `List<String> list = List.of("A", "B", "C");`
+- List is immutable. `of()` method is used to create immutable list.
+- Mutable list are - `ArrayList`, `LinkedList`, `Vector`, `Stack`.
+
+### ArrayList vs LinkedList in Java
+- ArrayList inserting and deleting elements is **slow** and **costly**.
+- LinkedList inserting and deleting elements is **fast** and **cheap**.
+- ArrayList is **faster** than LinkedList for **random access**.
+- LinkedList is **faster** than ArrayList for **sequential access**. and **slow** for random access.
+- ArrayList is **better** for **searching**.
+- LinkedList is **better** for **inserting** and **deleting**.
+- ArrayList is **better** for **read** operations.
+- LinkedList is **better** for **write** operations.
+
+### ArrayList vs Vector in Java
+- ArrayList is **not synchronized**.
+- Vector is **synchronized**. So, it is **thread safe**.
+- **Synchronization** means, only one thread can access the method at a time.
+- Example of **synchronized** methods excutions is if you have **two threads** and both are trying to **add** elements to the list at the same time, then only one thread can add the element at a time. Other thread has to wait until the first thread completes the operation.
+- **Synchronization** is **costly**. Because, it has to **lock** the method before executing and **unlock** after executing.
+- **ArrayList** is **faster** than **Vector**.
+- But If there is a **requirement** to **synchronize** the list, then you can use **Vector**.
+
+### List Interface - Methods to add, remove, change elements and lists
+- `add()`, `addAll()`, `remove()`, `removeAll()`, `retainAll()`, `clear()`, `set()`, `get()`, `indexOf()`, `lastIndexOf()`, `contains()`, `containsAll()`, `isEmpty()`, `size()`, `toArray()`, `subList()`, `sort()`, `replaceAll()`, `removeIf()`, `forEach()`, `iterator()`, `listIterator()`, `spliterator()`, `stream()`, `parallelStream()`, `copyOf()`, `copyOfRange()`, `of()`, `ofNullable()`, `addIfAbsent()` and many more.
+
+### List, and ArrayList - Iterating around the list
+- `for loop`, `for each loop`, `iterator`, `listIterator`, `forEach`, `stream`, `parallelStream`.
+
+### Choosing the right approach for iterating for printing and removing elements from the ArrayList
+- If you want to **print** the elements, then you can use **for each loop**.
+- If you want to **remove** elements while iterating through a collection, it's recommended to use an **iterator**. Using a **for-each loop** for removal can lead to a **ConcurrentModificationException** because the underlying collection structure is modified while iterating.
+
+### Scenario - You have one ArrayList of integers. You want to remove specific elements from the list. How to achieve this?
+- Because you trying to **remove** method at that time , if you use remove method, then it you need to pass the **index** of the element to be removed. If you want to pass the **element** to be removed, then you can use **remove(Object o)** method. Consider ArrayList having 4 elements - 100, 101, 102, 103. If you want to remove 101, then you can use `list.remove(101);`. But it will throw `java.lang.IndexOutOfBoundsException`. Because, it will try to remove the element at index 101. But there is no element at index 101. So, it will throw `java.lang.IndexOutOfBoundsException`. So, you need to pass the element to be removed. So, you can use `list.remove(Integer.valueOf(101));`.
+
+### List, ArrayList - Type safety
+- List is not type safe. You can add any type of elements to the list.
+- ArrayList is not type safe. You can add any type of elements to the list.
+- If you want to make the list type safe, then you can use `List<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.
+- If you want to make the list type safe, then you can use `ArrayList<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.
+- In a List you cannot add primitive data types. You need to use Wrapper classes. It manages the autoboxing and unboxing.
