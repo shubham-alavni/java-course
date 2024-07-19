@@ -438,3 +438,83 @@
 - If you want to make the list type safe, then you can use `List<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.
 - If you want to make the list type safe, then you can use `ArrayList<String> list = new ArrayList<>();`. Here, you can add only `String` type of elements to the list.
 - In a List you cannot add primitive data types. You need to use Wrapper classes. It manages the autoboxing and unboxing.
+
+### Collections - Set Interface
+- Set is used to store unique elements.
+- Set does not allow duplicates.
+- Set does not maintain the order of elements.
+- Set.of() method is used to create an immutable set.
+  
+### HashSet - implementations of Set Interface
+- HashSet is an implementation of the Set interface.
+- HashSet uses a hash table to store elements.
+- HashSet does not maintain the order of elements.
+- HashSet does not allow duplicates.
+- HashSet allows `null` values.
+- HashSet is not synchronized.
+- HashSet is faster than TreeSet.
+- Use case: HashSet is used when you need a collection of unique elements without duplicates.
+- Example: `Set<String> set = new HashSet<>();`
+
+### Set Vs HashSet
+- Set is an interface, while HashSet is an implementation of the Set interface.
+- Set is used to store unique elements, while HashSet is used to store unique elements using a hash table.
+- Set does not maintain the order of elements, while HashSet does not maintain the order of elements.
+- Set does not allow duplicates, while HashSet does not allow duplicates.
+- Set is a general interface, while HashSet is a specific implementation of the Set interface.
+- Use case: Use Set when you need a collection of unique elements without duplicates. Use HashSet when you need a hash table-based implementation of the Set interface.
+- Example of when to use HashSet
+
+### HashSet Vs. LinkedHashSet Vs. TreeSet - Unique elements, Order of elements, Sorting
+- HashSet is storing elements in the random order.
+- LinkedHashset is storing elements in the order of insertion.
+- TreeSet is storing elements in the sorted order.
+
+### Collections - Queue Interface
+ - Arranged in the order of processing. Example - To-do list.
+ - Queue is used to store elements in the order of processing.
+ - FIFO - First In First Out.
+ - Queue Interface extends Collection, So all the methods of Collection are available in Queue.
+ - Add, Offer, Remove, Poll, Element, Peek are the methods of Queue Interface.
+ - Real time example - To-do list, Printer queue, Call center, etc.
+ - Use case: Queue is used when you need to process elements in the order they were added.
+
+### Map Interface
+- Map is used to store key-value pairs.
+- Map Interface does not extends Collection Interface.
+- All the operations related to Collection are not applicable to Map.
+- But Map is part of Collections Framework.
+- Map Interface has 4 important implementations - HashMap, LinkedHashMap, TreeMap, and Hashtable.
+
+### HashTable Vs HashMap
+- HashTable is synchronized, while HashMap is not synchronized.
+- HashTable does not allow null keys or values, while HashMap allows one null key and multiple null values.
+- HashTable is thread-safe, while HashMap is not thread-safe.
+- HashTable is slower than HashMap because of synchronization overhead.
+- HashTable is a legacy class, while HashMap is the preferred choice for new applications.
+- Use case: Use HashTable when you need a thread-safe map with no null keys or values. Use HashMap when you need a non-thread-safe map with null keys or values.
+
+### LinkedHashMap
+- Underlying data structure Of LinkedHashMap is HashTable + LinkedList.
+- LinkedHashMap is an implementation of the Map interface.
+- LinkedHashMap maintains the order of elements based on the insertion order. Like LinkedHashSet.
+- Slower insertion and deletion than HashMap. Because it maintains the order of elements based on the insertion order.
+- Unsorted
+- Faster iteration than HashMap. Because all elements have links to each other.
+- LinkedHashMap is used when you need to maintain the order of elements based on the insertion order.
+- Example: `Map<String, Integer> map = new LinkedHashMap<>();`
+
+### TreeMap
+- TreeMap is an implementation of the Map interface.
+- Underlying data structure of TreeMap is Red-Black Tree.
+- Data is stored in sorted order based on the natural order of keys or a custom comparator.
+- Also implements NavigableMap interface.
+
+
+## **Note:** By default, When we are using .of() method, then it will create immutable collection.
+
+### Tips - Regarding Collections
+- Whenever you see "Hash" word in the collection, then it is not maintaining the order of elements. And it is storing elements in the random order - Unsorted. Example - HashSet, HashMap.
+- Whenever you see "Linked" word in the collection, then it is **maintaining the order of elements based on the insertion order.** **Unsorted** Example - LinkedHashSet, LinkedHashMap. Uses LinkedList or might be using Doubly LinkedList.
+- Whenever you see "Tree" word in the collection, then it is **maintaining the order of elements based on the sorting order.** **Sorted** Example - TreeSet, TreeMap. Uses Red-Black Tree data structure.
+- Implements also **NavigableMap** or **NavigableSet** interface, then it is also providing some additional methods for navigation.
