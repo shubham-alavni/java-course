@@ -518,3 +518,23 @@
 - Whenever you see "Linked" word in the collection, then it is **maintaining the order of elements based on the insertion order.** **Unsorted** Example - LinkedHashSet, LinkedHashMap. Uses LinkedList or might be using Doubly LinkedList.
 - Whenever you see "Tree" word in the collection, then it is **maintaining the order of elements based on the sorting order.** **Sorted** Example - TreeSet, TreeMap. Uses Red-Black Tree data structure.
 - Implements also **NavigableMap** or **NavigableSet** interface, then it is also providing some additional methods for navigation.
+
+### Why we need to use Collections Framework in Java?
+- Collections Framework provides a unified architecture for representing and manipulating collections of objects.
+- Collections Framework provides a set of interfaces and classes to store, retrieve, and manipulate collections of objects.
+- Collections Framework provides a standard way to work with collections, making it easier to write reusable and maintainable code.
+- Collections Framework provides a wide range of data structures and algorithms for working with collections, such as lists, sets, maps, queues, and sorting algorithms.
+- Collections Framework provides a rich set of utility classes for common operations like sorting, searching, filtering, and transforming collections.
+- Collections Framework is part of the Java API and is widely used in Java applications for managing collections of objects.
+- Use case: Collections Framework is used in Java applications to store, retrieve, and manipulate collections of objects efficiently and effectively.
+
+### Why do we need to use Generics in Java?
+- Generics provide type safety by allowing you to specify the type of objects that a collection can hold.
+- Generics allow you to write reusable and type-safe code by specifying the type of objects that a class or method can work with.
+- Generics eliminate the need for explicit type casting and provide compile-time type checking.
+- Generics improve code readability and maintainability by making the code more expressive and self-documenting.
+- Generics are used in Java collections to ensure that only objects of a specific type can be added to the collection.
+- Use case: Generics are used in Java to create type-safe collections, classes, and methods that work with a specific type of objects.
+- Example: `List<String> list = new ArrayList<>();` Here, `List<String>` specifies that the list can only hold `String` objects.
+- Wherever you are using type , then you can use Generics there. Like - Collections, Classes, Methods, Interfaces, return types, etc.
+- Generics are used to provide compile-time type checking and to avoid runtime errors.
