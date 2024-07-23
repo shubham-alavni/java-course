@@ -310,6 +310,9 @@
 - Wrapper classes are used to represent primitive data types as objects in Java.
 - Wrapper classes are final and immutable.
 - Wrapper classes are used for creation from other data types, Utility methods, Storage in Collections, and Serialization.
+- An object is needed to support synchronization in multi-threading.
+- The classes in the `java.lang` package are used to create wrapper classes for primitive data types.
+- Data structures in Collection framework (like ArrayList, LinkedList, etc) store only objects (reference types) and not primitive types. So, to store primitive types in these data structures, we need to convert them into objects. This is where wrapper classes come into the picture.
 
 ### What is the difference between `new Integer(10)` and `Integer.valueOf(10)` ?
 - `new Integer(10)` creates a new `Integer` object with the value `10` every time it is called.
@@ -528,6 +531,11 @@
 - Collections Framework is part of the Java API and is widely used in Java applications for managing collections of objects.
 - Use case: Collections Framework is used in Java applications to store, retrieve, and manipulate collections of objects efficiently and effectively.
 
+### What is Generics in Java?
+- Generics means parameterized types.
+- Using Generics, you can create classes that work with different types of objects.
+- An entity such as class, interface, or method that operates on a parameterized type is called a generic entity.
+
 ### Why do we need to use Generics in Java?
 - Generics provide type safety by allowing you to specify the type of objects that a collection can hold.
 - Generics allow you to write reusable and type-safe code by specifying the type of objects that a class or method can work with.
@@ -537,4 +545,4 @@
 - Use case: Generics are used in Java to create type-safe collections, classes, and methods that work with a specific type of objects.
 - Example: `List<String> list = new ArrayList<>();` Here, `List<String>` specifies that the list can only hold `String` objects.
 - Wherever you are using type , then you can use Generics there. Like - Collections, Classes, Methods, Interfaces, return types, etc.
-- Generics are used to provide compile-time type checking and to avoid runtime errors.
+- Generics are used to provide compile-time type checking and to avoid runtime errors.  
