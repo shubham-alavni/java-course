@@ -546,3 +546,98 @@
 - Example: `List<String> list = new ArrayList<>();` Here, `List<String>` specifies that the list can only hold `String` objects.
 - Wherever you are using type , then you can use Generics there. Like - Collections, Classes, Methods, Interfaces, return types, etc.
 - Generics are used to provide compile-time type checking and to avoid runtime errors.  
+
+### Two ways of creating Thread in Java
+- By **extending** the `Thread` class.
+- By **implementing** the `Runnable` interface.
+
+### Thread run() Vs. Thread start()
+- `run()` method is used to define the task that the thread will execute.
+- `start()` method is used to start the execution of the thread.
+- When you call the `start()` method, it internally calls the `run()` method to execute the task.
+- If you call the `run()` method directly, it will execute the task in the current thread, not in a separate thread.
+- Use case: Use the `run()` method to define the task that the thread will execute. Use the `start()` method to start the execution of the thread.
+
+### States of Thread in Java
+- New - When the thread is created but not started.
+- Runnable - When the thread is ready to run but not running.
+- Running - When the thread is executing the task.
+- Blocked/Waiting - When the thread is waiting for a resource or event.
+- Terminated/Dead - When the thread has completed its task or stopped.
+- Example of Blocked/Waiting state - When the thread is waiting for user input, file I/O, network I/O, or synchronization locks, or Database connection.
+- Example of Terminated/Dead state - When the thread has completed its task or stopped due to an exception.
+- Example of New state - When the thread is created using the `new` keyword but not started using the `start()` method.
+- Example of Runnable state - When the thread is ready to run but not running because the CPU is busy executing other threads.
+- Example of Running state - When the thread is executing the task and using the CPU to perform the computation.
+
+### Thread Priority in Java
+- Thread priority is used to determine the order in which threads are scheduled to run by the operating system.
+- Thread priority is an integer value between 1 and 10, where 1 is the lowest priority and 10 is the highest priority.
+- MAX_PRIORITY, MIN_PRIORITY, NORM_PRIORITY are the constants in the Thread class.
+- **NORM_PRIORITY** is the **default** priority of a thread.
+
+### Communication between Threads, join() method
+- The `join()` method is used to wait for a thread to complete its execution before continuing with the current thread.
+- The `join()` method blocks the current thread until the thread on which it is called completes its execution.
+- The `join()` method can be used to ensure that the threads are executed in a specific order.
+- Use case: Use the `join()` method to wait for a thread to complete its execution before continuing with the current thread.
+
+### Thread utility methods and synchronized keyword - sleep, yield
+- `sleep()` method is used to pause the execution of the current thread for a specified amount of time.
+- `yield()` method is used to pause the execution of the current thread and give other threads a chance to run. Give up the CPU.
+- `synchronized` keyword is used to create a synchronized block or method to ensure that only one thread can access the block or method at a time.
+- Use case: Use the `sleep()` method to introduce a delay in the execution of a thread. Use the `yield()` method to give other threads a chance to run.
+- Use case: Use the `synchronized` keyword to create thread-safe code that prevents multiple threads from accessing shared resources simultaneously.
+- Example: `public synchronized void increment() { count++; }`
+- In the above example, the `increment()` method is synchronized, which ensures that only one thread can increment the `count` variable at a time.
+- `HashTable` is synchronized and Thread safe. It is the legacy class. and example of synchronized keyword.
+- `synchronized` would put lots of overhead on the system, because 1000 lines of code is synchronized will be executed by only one
+
+### Controlling the execution of Threads
+- There are 2 tasks - Task1 and Task2. wait until Task1 or Task2 is completed. This is not really possible. Because, we cannot predict which task will be completed first. So, we can use `join()` method to wait until Task1 is completed. Then we can start Task2.
+
+### Thread Vs. Runnable
+- Thread is a class in Java that represents a thread of execution.
+- Runnable is an interface in Java that represents a task that can be executed by a thread.
+- Thread class implements the Runnable interface.
+- Thread class provides more control over the thread lifecycle, while Runnable interface provides more flexibility in defining tasks.
+- Use case: Use the Thread class when you need more control over the thread lifecycle. Use the Runnable interface when you need more flexibility in defining tasks.
+- Example: `Thread thread = new Thread(new MyRunnable());` Here, `MyRunnable` is a class that implements the Runnable interface.
+
+### Executor service in Java
+- Executor service is used to manage and control the execution of threads in a thread pool.
+- Executor service provides a way to create, manage, and execute threads in a pool of worker threads.
+- Executor service provides methods to submit tasks, execute tasks, and shut down the executor service.
+- Executor service is used to improve the performance of multi-threaded applications by reusing threads and managing the thread lifecycle.
+- `newFixedThreadPool()` - Creates a fixed-size thread pool with a specified number of threads. Means if you passed 3 threads, then 3 threads will be created and 3 threads will be used to execute the tasks parallelly.
+- `newSingleThreadExecutor()` - Creates a single-threaded executor that uses a single worker thread to execute tasks. Means only one thread will be created and only one thread will be used to execute the tasks.
+- Use case: Executor service is used in Java applications to manage the execution of tasks in a thread pool efficiently.
+- Example: `ExecutorService executor = Executors.newFixedThreadPool(5);`
+
+### Callable and Future in Java
+- Callable is a functional interface in Java that represents a task that can be executed by a thread and return a result.
+- Callable is similar to the Runnable interface but can return a result or throw an exception.
+- Future is an interface in Java that represents the result of an asynchronous computation.
+- Future provides methods to check if the computation is complete, retrieve the result, and cancel the computation.
+- Future is used to retrieve the result of a Callable task that has been submitted to an Executor service.
+- Use case: Callable and Future are used in Java applications to execute tasks asynchronously and retrieve the result of the computation.
+- Example: `Callable<Integer> task = () -> { return 42; }; Future<Integer> future = executor.submit(task);`
+
+### ExecutiorService - submit() method
+- `submit()` method is used to submit a task for execution by the Executor service.
+- `submit()` method returns a Future object that can be used to retrieve the result of the computation.
+- `submit()` method can be used to submit tasks that return a result or throw an exception.
+
+### Waiting for completions of multiple tasks
+- `invokeAll()` method is used to submit multiple tasks for execution and wait for their completion.
+- `invokeAll()` method returns a list of Future objects that can be used to retrieve the results of the tasks.
+- `invokeAll()` method blocks until all the tasks are completed or the timeout expires.
+- Use case: `invokeAll()` method is used to submit multiple tasks for execution and wait for their completion.
+- Example: `List<Callable<Integer>> tasks = List.of(task1, task2, task3); List<Future<Integer>> futures = executor.invokeAll(tasks);`
+
+### Wait for the first completion of multiple tasks
+- `invokeAny()` method is used to submit multiple tasks for execution and wait for the first task to complete.
+- `invokeAny()` method returns the result of the first task that completes successfully.
+- `invokeAny()` method blocks until at least one task is completed or the timeout expires.
+- Use case: `invokeAny()` method is used to submit multiple tasks for execution and wait for the first task to complete.
+- Example: `List<Callable<Integer>> tasks = List.of(task1, task2, task3); Integer result = executor.invokeAny(tasks);`
