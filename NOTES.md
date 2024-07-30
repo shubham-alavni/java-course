@@ -641,3 +641,69 @@
 - `invokeAny()` method blocks until at least one task is completed or the timeout expires.
 - Use case: `invokeAny()` method is used to submit multiple tasks for execution and wait for the first task to complete.
 - Example: `List<Callable<Integer>> tasks = List.of(task1, task2, task3); Integer result = executor.invokeAny(tasks);`
+
+### Exception and Throwable class
+- Exception is a class in Java that represents an exceptional condition that can occur during the execution of a program.
+- Throwable is a class in Java that is the superclass of all exceptions and errors in Java.
+- Throwable class has two subclasses - Exception and Error.
+- Exception is used to handle exceptional conditions that can be caught and recovered from.
+- Error is used to handle exceptional conditions that cannot be caught and recovered from.
+- Use case: Use Exception to handle exceptional conditions that can be caught and recovered from. Use Error to handle exceptional conditions that cannot be caught and recovered from.
+- Example: `try { // code that may throw an exception } catch (Exception e) { // handle the exception }`
+- Example: `try { // code that may throw an error } catch (Error e) { // handle the error }`
+- Example: `try { // code that may throw an exception or error } catch (Throwable t) { // handle the exception or error }`
+### Finally block in Java
+- Finally block is used to execute code that should always run, regardless of whether an exception is thrown or not.
+- Finally block is used to release resources, close connections, or perform cleanup operations.
+- Finally block is executed after the try block and catch block, even if an exception is thrown.
+- Use case: Finally block is used to release resources, close connections, or perform cleanup operations that should always run.
+- Example: `try { // code that may throw an exception } catch (Exception e) { // handle the exception } finally { // cleanup code that should always run }`
+
+### Checked Vs. Unchecked Exceptions
+- Checked exceptions are exceptions that are checked at compile time by the compiler.
+- Unchecked exceptions are exceptions that are not checked at compile time by the compiler.
+- Checked exceptions are subclasses of the Exception class, while unchecked exceptions are subclasses of the RuntimeException class.
+- Checked exceptions must be caught or declared in the method signature, while unchecked exceptions do not need to be caught or declared.
+- Use case: Checked exceptions are used for exceptional conditions that can be caught and recovered from. Unchecked exceptions are used for exceptional conditions that cannot be caught and recovered from.
+- Example: `try { // code that may throw a checked exception } catch (Exception e) { // handle the checked exception }`
+- Example: `try { // code that may throw an unchecked exception } catch (RuntimeException e) { // handle the unchecked exception }`
+- Example: `try { // code that may throw an unchecked exception } catch (Exception e) { // handle the unchecked exception }`
+
+### Exception Hierachy
+- Throwable is the superclass of all exceptions and errors in Java.
+- Throwable has two subclasses - Exception and Error.
+- Exception has two subclasses - RuntimeException and IOException.
+- Error has two subclasses - VirtualMachineError and AssertionError.
+- RuntimeException has many subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException.
+- IOException has many subclasses, such as FileNotFoundException, IOException, and EOFException.
+- Use case: Throwable is the root of the exception hierarchy in Java. Exception and Error are the main subclasses of Throwable.
+- Example: `try { // code that may throw an exception } catch (Exception e) { // handle the exception }`
+
+### RuntimeException Vs. InterruptedException
+- RuntimeException is a subclass of the Exception class that represents exceptions that can be caught and recovered from.
+- InterruptedException is a subclass of the Exception class that represents exceptions that occur when a thread is interrupted while waiting or sleeping.
+- RuntimeException is an unchecked exception, while InterruptedException is a checked exception.
+- Use case: RuntimeException is used for exceptional conditions that can be caught and recovered from. InterruptedException is used for exceptional conditions that occur when a thread is interrupted.
+
+
+### `throws` keyword in Java
+- `throws` keyword is used to declare that a method may throw an exception.
+- `throws` keyword is used in the method signature to specify the exceptions that the method may throw.
+- `throws` keyword is used to delegate the responsibility of handling exceptions to the caller of the method.
+- Use case: `throws` keyword is used to declare that a method may throw an exception and delegate the responsibility of handling exceptions to the caller of the method.
+- Example: `public void readFile() throws IOException { // code that may throw an IOException }`
+
+### Try with Resources and AutoCloseable interface
+- Try with resources is a feature introduced in Java 7 to automatically close resources after they are no longer needed.
+- Try with resources is used to manage resources that implement the AutoCloseable interface.
+- AutoCloseable is an interface in Java that has a single method `close()` to release resources.
+- Use case: Try with resources is used to automatically close resources like files, streams, and connections after they are no longer needed.
+- Example: `try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) { // code that reads from the file }`
+
+### Exception Handling best practices
+- Never hide exceptions - Always log exceptions or handle them appropriately.
+- Do not use exceptions for flow control - Use exceptions for exceptional conditions, not for normal program flow.
+- Think about the user / caller - Provide meaningful error messages and handle exceptions gracefully.
+- Think about the your support team - Provide detailed error messages and logs for troubleshooting.
+- Think about the calling method - Declare exceptions in the method signature or handle them appropriately.
+- Have global exception handling - Use a global exception handler to catch unhandled exceptions and log them.
